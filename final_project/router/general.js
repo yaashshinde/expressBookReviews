@@ -28,7 +28,7 @@ public_users.get('/', function (req, res) {
   return res.status(200).json(JSON.stringify(books, null, 4));
 });
 
-// Task 10: Get all books using Axios (Async/Await)
+// Get all books using Axios
 public_users.get('/asyncbooks', async function (req, res) {
   try {
     const response = await axios.get('http://localhost:5000/');
@@ -50,7 +50,7 @@ public_users.get('/isbn/:isbn', function (req, res) {
   }
 });
 
-// Task 11: Get book by ISBN using Axios
+// Get book by ISBN using Axios
 public_users.get('/asyncisbn/:isbn', async function (req, res) {
   const isbn = req.params.isbn;
 
@@ -109,6 +109,18 @@ public_users.get('/title/:title', function (req, res) {
     return res.status(200).json(JSON.stringify(filteredBooks, null, 4));
   } else {
     return res.status(404).json({ message: "No books found with this title" });
+  }
+});
+
+// Get books by title using Axios
+public_users.get('/asynctitle/:title', async function (req, res) {
+  const title = req.params.title;
+
+  try {
+    const response = await axios.get(`http://localhost:5000/title/${title}`);
+    return res.status(200).json(response.data);
+  } catch (error) {
+    return res.status(500).json({ message: "Error fetching books by title" });
   }
 });
 
