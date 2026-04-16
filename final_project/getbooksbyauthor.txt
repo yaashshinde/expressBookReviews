@@ -1,2 +1,4 @@
 curl http://localhost:5000/author/Chinua%20Achebe
+
+OUTPUT:
 "{\n    \"1\": {\n        \"author\": \"Chinua Achebe\",\n        \"title\": \"Things Fall Apart\",\n        \"reviews\": {}\n    }\n}"
