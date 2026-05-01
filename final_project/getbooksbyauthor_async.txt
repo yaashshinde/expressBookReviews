@@ -1,4 +1,10 @@
-curl http://localhost:5000/asyncauthor/Chinua%20Achebe
+curl http://localhost:5000/author/Chinua%20Achebe
 
 OUTPUT:
-"{\n    \"1\": {\n        \"author\": \"Chinua Achebe\",\n        \"title\": \"Things Fall Apart\",\n        \"reviews\": {}\n    }\n}"
+{
+  "1": {
+    "author": "Chinua Achebe",
+    "title": "Things Fall Apart",
+    "reviews": {}
+  }
+}
